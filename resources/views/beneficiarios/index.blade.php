@@ -88,14 +88,14 @@
                             </div>
                         </form>
                     </div>
-                    <div class="card-footer">
+                    {{-- <div class="card-footer">
                         <form action="{{ route('beneficiarios.import') }}" method="POST">
                             @csrf
                             <button type="submit" class="btn btn-outline-secondary btn-sm">
                                 <i class="bi bi-file-excel"></i> Importar desde Excel
                             </button>
                         </form>
-                    </div>
+                    </div> --}}
                 </div>
 
                 @if(isset($beneficiario))

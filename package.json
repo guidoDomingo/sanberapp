@@ -4,7 +4,7 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "vercel-build": "sh vercel-sqlite-setup.sh && vite build --config vite.vercel.config.js && shx mkdir -p dist && shx cp -r public/* dist/"
+        "vercel-build": "npm run build && php -r \"file_exists('.env') || copy('.env.production', '.env');\" && php artisan optimize:clear && php artisan config:cache && php artisan route:cache && php artisan view:cache && php -r \"file_exists('/tmp/database.sqlite') || copy('./database/database.sqlite', '/tmp/database.sqlite');\""
     },
     "devDependencies": {
         "axios": "^1.6.4",

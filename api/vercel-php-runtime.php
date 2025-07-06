@@ -2,14 +2,15 @@
 // Configuración específica para el runtime de PHP en Vercel
 
 // Configurar directorio raíz
-$_SERVER['DOCUMENT_ROOT'] = __DIR__ . '/public';
+$_SERVER['DOCUMENT_ROOT'] = __DIR__ . '/../public';
 
 // Establecer los directorios de escritura temporales
-$_ENV['APP_STORAGE'] = '/tmp/app';
+$_ENV['APP_STORAGE'] = '/tmp/storage/app';
 $_ENV['VIEW_COMPILED_PATH'] = '/tmp/storage/framework/views';
 $_ENV['CACHE_PATH'] = '/tmp/storage/framework/cache';
 $_ENV['LOG_PATH'] = '/tmp/storage/logs';
 $_ENV['SESSION_PATH'] = '/tmp/storage/framework/sessions';
+$_ENV['FRAMEWORK_CACHE_PATH'] = '/tmp/storage/framework';
 
 // Crear directorios necesarios
 $directories = [
