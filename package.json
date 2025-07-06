@@ -3,7 +3,8 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build && shx mkdir -p dist && shx cp -r public/* dist/"
+        "build": "vite build",
+        "vercel-build": "sh vercel-sqlite-setup.sh && vite build --config vite.vercel.config.js && shx mkdir -p dist && shx cp -r public/* dist/"
     },
     "devDependencies": {
         "axios": "^1.6.4",
