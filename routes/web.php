@@ -20,5 +20,5 @@ use Illuminate\Support\Facades\Route;
 
 // Beneficiarios Routes
 Route::get('/', [BeneficiarioController::class, 'index'])->name('beneficiarios.index');
-Route::post('/beneficiarios/search', [BeneficiarioController::class, 'search'])->name('beneficiarios.search');
+Route::match(['get', 'post'], '/beneficiarios/search', [BeneficiarioController::class, 'search'])->name('beneficiarios.search');
 Route::post('/beneficiarios/import', [BeneficiarioController::class, 'importExcel'])->name('beneficiarios.import');

@@ -14,11 +14,23 @@ class BeneficiarioController extends Controller
 
     public function search(Request $request)
     {
-        $request->validate([
-            'cedula' => 'required|string'
-        ]);
+        // Si es una solicitud GET y tiene un parámetro 'cedula' en la URL
+        if ($request->isMethod('get') && $request->has('cedula')) {
+            $cedula = $request->cedula;
+        } 
+        // Si es POST, valida como antes
+        else if ($request->isMethod('post')) {
+            $request->validate([
+                'cedula' => 'required|string'
+            ]);
+            $cedula = $request->cedula;
+        }
+        // Si no hay cédula, redirecciona al inicio
+        else {
+            return redirect()->route('beneficiarios.index');
+        }
 
-        $cedula = $request->cedula;
+        // Buscar el beneficiario
         $beneficiario = Beneficiario::where('cedula', $cedula)->first();
         
         return view('beneficiarios.index', compact('beneficiario', 'cedula'));
