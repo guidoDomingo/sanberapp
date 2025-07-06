@@ -148,7 +148,7 @@
             <div class="col-md-8 mx-auto">
                 <hr>
                 <p>&copy; {{ date('Y') }} Municipalidad de San Bernardino - Departamento de Educación</p>
-                <p>Para consultas adicionales, comuníquese al teléfono: (000) 000-0000</p>
+                <p>Para consultas adicionales, comuníquese al teléfono: (0512) 232-212</p>
             </div>
         </div>
     </footer>
