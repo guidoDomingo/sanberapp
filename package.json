@@ -4,7 +4,7 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "vercel-build": "npm run build && php -r \"file_exists('.env') || copy('.env.production', '.env');\" && php artisan optimize:clear && php artisan config:cache && php artisan route:cache && php artisan view:cache && php -r \"file_exists('/tmp/database.sqlite') || copy('./database/database.sqlite', '/tmp/database.sqlite');\""
+        "vercel-build": "npm run build && mkdir -p /tmp && cp ./database/database.sqlite /tmp/database.sqlite && chmod 777 /tmp/database.sqlite"
     },
     "devDependencies": {
         "axios": "^1.6.4",
