@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "framework": "laravel",
+  "outputDirectory": "public",
+  "routes": [
+    { "src": "/(.*)", "dest": "/public/index.php" }
+  ],
+  "builds": [
+    { "src": "/public/index.php", "use": "vercel-php@0.6.0" }
+  ]
+}
